@@ -1,0 +1,215 @@
+.card {
+  top: -40px;
+  left: 0px;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  width: 60%;
+  min-height: 90px;
+  border: 4px solid var(--primary);
+  padding: 15px;
+  margin: calc(50vh - 250px) auto 0 auto;
+  
+
+  box-shadow: 0 0 0 -3px var(--background), 0 0 0 0 var(--green),
+      0 0 0 -3px var(--background), 0 0 0 0  var(--yellow),
+      0 0 0 -3px var(--background), 0 0 0 0  var(--orange),
+      0 0 0 -3px  var(--background), 0 0 0 0  var(--red);
+
+  position: relative;
+ 
+  cursor: pointer;
+  animation: shadow-wave initial paused;
+}
+
+.card:hover {
+
+  top: -20px;
+  left: -20px;
+
+  box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+        20px -20px 0 -3px var(--background), 20px -20px var(--yellow), 
+        30px -30px 0 -3px var(--background), 30px -30px var(--orange), 
+        40px -40px 0 -3px var(--background), 40px -40px var(--red); 
+  
+  transition: box-shadow 0.5s, top 0.5s, left 0.5s;
+  animation: wave 1s ease infinite, shadow-wave 1s ease 0.55s infinite;
+}
+
+
+@keyframes shadow-wave {
+  0% {
+    
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+      20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+      30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+      40px -40px 0 -3px var(--background), 40px -40px var(--red);
+  }
+  20% {
+    
+    box-shadow: 10px -10px 0 -4px var(--background), 10px -10px var(--primary),
+      20px -20px 0 -3px var(--background), 20px -20px var(--green),
+      30px -30px 0 -3px var(--background), 30px -30px var(--yellow),
+      40px -40px 0 -3px var(--background), 40px -40px var(--orange);
+  }
+  40% {
+    
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--red),
+      20px -20px 0 -3px var(--background), 20px -20px var(--primary),
+      30px -30px 0 -3px var(--background), 30px -30px var(--green),
+      40px -40px 0 -3px var(--background), 40px -40px var(--yellow);
+  }
+  60% {
+    
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--orange),
+      20px -20px 0 -3px var(--background), 20px -20px var(--red),
+      30px -30px 0 -3px var(--background), 30px -30px var(--primary),
+      40px -40px 0 -3px var(--background), 40px -40px var(--green);
+  }
+  80% {
+    
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--yellow),
+      20px -20px 0 -3px var(--background), 20px -20px var(--orange),
+      30px -30px 0 -3px var(--background), 30px -30px var(--red),
+      40px -40px 0 -3px var(--background), 40px -40px var(--primary);
+  }
+  100% {
+    
+    box-shadow: 10px -10px 0 -3px var(--background), 10px -10px var(--green),
+      20px -20px 0 -3px var(--background), 20px -20px var(--yellow),
+      30px -30px 0 -3px var(--background), 30px -30px var(--orange),
+      40px -40px 0 -3px var(--background), 40px -40px var(--red);
+  }
+  
+}
+
+@keyframes wave {
+  0% {
+    border: 4px solid var(--primary);
+  }
+  20% {
+    border: 4px solid var(--red);
+  }
+  40% {
+    border: 4px solid var(--orange);
+  }
+  60% {
+    border: 4px solid var(--yellow);
+  }
+  80% {
+    border: 4px solid var(--green);
+  }
+  100% {
+    border: 4px solid var(--primary);
+  }
+  
+}
+
+
+
+
+
+
+:root {
+  --primary: #555BFF;
+  --secondary: #22D2A0;
+  --background: white;
+  --green: #1FC11B;
+  --yellow: #FFD913;
+  --orange: #FF9C55;
+  --red: #FF5555;
+  --forest: #192824;
+  --blue: #0A00CC;
+  --purple: #61009F;
+  --paper: #FDEBEB;
+  --bluelinked: #0388d1;
+} 
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-image: radial-gradient(circle, var(--secondary) 30%, var(--paper) 30%);
+  background-size: 10px 10px;
+  font-family: "Archivo", sans-serif;
+  color: var(--primary);
+}
+
+.card p {
+
+  font-size: 0.9vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-left: 5%;
+  text-align: justify;
+}
+
+.card h1 {
+
+  font-size: 1.9vw;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+}
+
+.card h2 {
+  width: 30%;
+  font-size: 1.2vw;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card-data{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 1%;
+}
+
+.card-personal-data{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  width: 50%;
+}
+
+.card-personal-data img{
+  width: 10%;
+}
+
+.botones{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.botones img{
+  width: 10%;
+}
+
+.botones a{
+  font-size: 0.8vw;
+  color: var(--bluelinked);
+}
